@@ -1,1 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa Bosque California | Refugio Exclusivo</title>
+  <meta name="description" content="Casa Bosque California. Lujo, naturaleza y arquitectura en perfecta armonía. Vive una experiencia exclusiva.">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0d1117;
+      color: white;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      position: relative;
+      background: url("assets/images/CALI1.jpeg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.85)
+      );
+      backdrop-filter: blur(3px);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 20px;
+      animation: fadeUp 1.5s ease forwards;
+      opacity: 0;
+    }
+
+    .logo {
+      width: 240px;
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+      animation-delay: 0.5s;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1rem;
+      letter-spacing: 2px;
+      color: #d4d4d4;
+    }
+
+    .btn-primary {
+      margin-top: 40px;
+      padding: 14px 32px;
+      border: 1px solid #c8a96a;
+      background: transparent;
+      color: #c8a96a;
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      transition: 0.4s ease;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: #c8a96a;
+      color: #000;
+      transform: translateY(-3px);
+    }
+
+    /* WhatsApp Button */
+    .whatsapp {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25d366;
+      color: white;
+      padding: 14px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      transition: 0.3s ease;
+      z-index: 1000;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.1);
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .logo {
+        width: 180px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+      <img src="assets/images/logo.bosque.png" alt="Casa Bosque Logo" class="logo">
+      <h1>Un Refugio Exclusivo</h1>
+      <p>Lujo, naturaleza y arquitectura en perfecta armonía</p>
+      <a href="https://wa.me/51980474304" target="_blank" class="btn-primary">
+        Reservar Ahora
+      </a>
+    </div>
+  </section>
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/51980474304" target="_blank" class="whatsapp">
+    WhatsApp
+  </a>
+
+</body>
+</html>
