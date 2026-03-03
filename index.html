@@ -1,173 +1,175 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Casa Bosque California | Refugio Exclusivo</title>
-  <meta name="description" content="Casa Bosque California. Lujo, naturaleza y arquitectura en perfecta armonía. Vive una experiencia exclusiva.">
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Bosque California | Refugio Exclusivo</title>
+<meta name="description" content="Casa Bosque California. Lujo, naturaleza y arquitectura en perfecta armonía. Vive una experiencia exclusiva.">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #0d1117;
-      color: white;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Montserrat',sans-serif;background:#0d1117;color:#fff;overflow-x:hidden}
+section{padding:100px 10%}
+h1,h2{font-family:'Playfair Display',serif;font-weight:400}
+p{color:#d4d4d4;line-height:1.6}
 
-    /* HERO */
-    .hero {
-      height: 100vh;
-      position: relative;
-      background: url("assets/images/CALI1.jpeg") center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+/* HERO */
+.hero{
+height:100vh;
+background:url("assets/images/CALI1.jpeg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative
+}
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.9))
+}
+.hero-content{
+position:relative;
+z-index:2;
+max-width:800px;
+animation:fadeUp 1.5s ease forwards;
+opacity:0
+}
+.logo{width:240px;margin-bottom:30px}
+.btn-primary{
+margin-top:40px;
+padding:14px 32px;
+border:1px solid #c8a96a;
+background:transparent;
+color:#c8a96a;
+text-decoration:none;
+letter-spacing:2px;
+transition:0.4s
+}
+.btn-primary:hover{
+background:#c8a96a;
+color:#000
+}
 
-    .overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        rgba(0,0,0,0.65),
-        rgba(0,0,0,0.85)
-      );
-      backdrop-filter: blur(3px);
-    }
+/* GALERÍA */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px
+}
+.gallery img{
+width:100%;
+height:320px;
+object-fit:cover;
+border-radius:8px;
+transition:0.5s
+}
+.gallery img:hover{
+transform:scale(1.05)
+}
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      padding: 20px;
-      animation: fadeUp 1.5s ease forwards;
-      opacity: 0;
-    }
+/* EXPERIENCIA */
+.experience{
+text-align:center;
+max-width:800px;
+margin:auto
+}
 
-    .logo {
-      width: 240px;
-      margin-bottom: 30px;
-      animation: fadeIn 2s ease forwards;
-      opacity: 0;
-      animation-delay: 0.5s;
-    }
+/* FOOTER */
+footer{
+background:#0a0f14;
+text-align:center;
+padding:40px 10%;
+font-size:14px;
+color:#888
+}
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      font-weight: 400;
-      letter-spacing: 2px;
-      margin-bottom: 15px;
-    }
+/* WhatsApp */
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25d366;
+color:#fff;
+padding:14px 20px;
+border-radius:50px;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+z-index:1000
+}
+.whatsapp:hover{transform:scale(1.1)}
 
-    p {
-      font-size: 1rem;
-      letter-spacing: 2px;
-      color: #d4d4d4;
-    }
+/* Animaciones */
+@keyframes fadeUp{
+from{transform:translateY(40px);opacity:0}
+to{transform:translateY(0);opacity:1}
+}
 
-    .btn-primary {
-      margin-top: 40px;
-      padding: 14px 32px;
-      border: 1px solid #c8a96a;
-      background: transparent;
-      color: #c8a96a;
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      transition: 0.4s ease;
-      display: inline-block;
-    }
-
-    .btn-primary:hover {
-      background: #c8a96a;
-      color: #000;
-      transform: translateY(-3px);
-    }
-
-    /* WhatsApp Button */
-    .whatsapp {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #25d366;
-      color: white;
-      padding: 14px 20px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 500;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-      transition: 0.3s ease;
-      z-index: 1000;
-    }
-
-    .whatsapp:hover {
-      transform: scale(1.1);
-    }
-
-    /* Animations */
-    @keyframes fadeUp {
-      from {
-        transform: translateY(40px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Responsive */
-    @media(max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .logo {
-        width: 180px;
-      }
-    }
-
-  </style>
+/* Responsive */
+@media(max-width:768px){
+h1{font-size:2rem}
+.logo{width:180px}
+section{padding:80px 6%}
+}
+</style>
 </head>
 
 <body>
 
-  <section class="hero">
-    <div class="overlay"></div>
+<!-- HERO -->
+<section class="hero">
+<div class="overlay"></div>
+<div class="hero-content">
+<img src="assets/images/logo.bosque.png" class="logo">
+<h1>Un Refugio Exclusivo</h1>
+<p>Lujo, naturaleza y arquitectura en perfecta armonía</p>
+<a href="https://wa.me/51980474304" target="_blank" class="btn-primary">
+Reservar Ahora
+</a>
+</div>
+</section>
 
-    <div class="hero-content">
-      <img src="assets/images/logo.bosque.png" alt="Casa Bosque Logo" class="logo">
-      <h1>Un Refugio Exclusivo</h1>
-      <p>Lujo, naturaleza y arquitectura en perfecta armonía</p>
-      <a href="https://wa.me/51980474304" target="_blank" class="btn-primary">
-        Reservar Ahora
-      </a>
-    </div>
-  </section>
+<!-- GALERÍA -->
+<section>
+<h2 style="text-align:center;margin-bottom:60px;">Descubre Casa Bosque</h2>
+<div class="gallery">
+<img src="assets/images/CALI1.jpeg">
+<img src="assets/images/CALI2.jpeg">
+<img src="assets/images/FOTO-CALI1.jpeg">
+</div>
+</section>
 
-  <!-- WhatsApp flotante -->
-  <a href="https://wa.me/51980474304" target="_blank" class="whatsapp">
-    WhatsApp
-  </a>
+<!-- EXPERIENCIA -->
+<section class="experience">
+<h2 style="margin-bottom:30px;">Una Experiencia Única</h2>
+<p>
+Casa Bosque California es más que una propiedad.
+Es un espacio diseñado para quienes valoran la privacidad,
+la arquitectura de alto nivel y la conexión con la naturaleza.
+Cada detalle ha sido pensado para ofrecer confort,
+exclusividad y una atmósfera incomparable.
+</p>
+</section>
+
+<!-- CONTACTO -->
+<section style="text-align:center;">
+<h2 style="margin-bottom:30px;">Reserva tu Estancia</h2>
+<p style="margin-bottom:40px;">Contáctanos directamente por WhatsApp y asegura tu experiencia exclusiva.</p>
+<a href="https://wa.me/51980474304" target="_blank" class="btn-primary">
+Contactar Ahora
+</a>
+</section>
+
+<footer>
+© 2026 Casa Bosque California. Todos los derechos reservados.
+</footer>
+
+<a href="https://wa.me/51980474304" target="_blank" class="whatsapp">
+WhatsApp
+</a>
 
 </body>
 </html>
