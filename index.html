@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Casa Bosque California | Refugio Exclusivo</title>
-  <meta name="description" content="Casa Bosque California. Lujo, naturaleza y arquitectura en perfecta armonía. Vive una experiencia exclusiva." />
+  <meta name="description" content="Casa Bosque California en Chaclacayo (Puente Los Ángeles). Casa con piscina, cochera y salón premium para eventos privados u hospedaje. Atención 24/7. Reserva por WhatsApp." />
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -13,11 +13,10 @@
       --bg:#070a0f;
       --bg2:#0b1118;
       --txt:#ffffff;
-      --muted:rgba(255,255,255,.78);
-      --muted2:rgba(255,255,255,.60);
+      --muted:rgba(255,255,255,.82);
+      --muted2:rgba(255,255,255,.62);
       --gold:#c8a96a;
       --gold2:#d8bf86;
-      --line:rgba(200,169,106,.35);
       --shadow:0 18px 60px rgba(0,0,0,.55);
       --radius:18px;
     }
@@ -26,20 +25,21 @@
     html{scroll-behavior:smooth}
     body{
       font-family:'Montserrat',sans-serif;
-      background:radial-gradient(1200px 700px at 70% -10%, rgba(200,169,106,.12), transparent 55%),
-                 radial-gradient(900px 600px at 20% 10%, rgba(255,255,255,.06), transparent 55%),
-                 linear-gradient(180deg, var(--bg), var(--bg2));
+      background:
+        radial-gradient(1200px 700px at 70% -10%, rgba(200,169,106,.12), transparent 55%),
+        radial-gradient(900px 600px at 20% 10%, rgba(255,255,255,.06), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
       color:var(--txt);
       overflow-x:hidden;
     }
 
-    /* NAV */
+    /* ===== NAV ===== */
     .nav{
       position:fixed;
       top:18px;
       left:50%;
       transform:translateX(-50%);
-      width:min(1100px, calc(100% - 24px));
+      width:min(1120px, calc(100% - 24px));
       z-index:2000;
       border:1px solid rgba(255,255,255,.10);
       background:rgba(10,14,20,.58);
@@ -48,33 +48,81 @@
       box-shadow:0 10px 35px rgba(0,0,0,.45);
     }
     .nav-inner{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:10px 14px;gap:10px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 14px;
+      gap:10px;
     }
-    .brand{display:flex;align-items:center;gap:10px;padding-left:6px}
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding-left:6px;
+      min-width:0;
+      text-decoration:none;
+      color:inherit;
+    }
     .brand img{
-      width:34px;height:34px;border-radius:10px;object-fit:cover;
+      width:36px;height:36px;border-radius:12px;object-fit:cover;
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.05);
+      box-shadow:0 10px 25px rgba(0,0,0,.35);
+      flex:0 0 auto;
     }
-    .brand b{
+    .brand-text{
+      display:flex;
+      flex-direction:column;   /* ✅ SIEMPRE en 2 líneas */
+      line-height:1.05;
+      gap:4px;
+      min-width:0;
+    }
+    .brand-line-1{
+      font-size:.72rem;
+      letter-spacing:.34em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.85);
+      white-space:nowrap;
+    }
+    .brand-line-2{
       font-family:'Playfair Display',serif;
       font-weight:500;
-      letter-spacing:.12em;
+      letter-spacing:.16em;
       text-transform:uppercase;
-      font-size:.95rem;
+      font-size:.92rem;
       color:rgba(255,255,255,.92);
+      white-space:nowrap;
+      position:relative;
+      padding-bottom:6px;
     }
-    .nav-links{display:flex;align-items:center;gap:18px;padding-right:8px}
+    .brand-line-2::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:72%;
+      height:1px;
+      background:linear-gradient(90deg, rgba(200,169,106,.15), rgba(200,169,106,.95), rgba(200,169,106,.15));
+      opacity:.95;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      padding-right:6px;
+    }
     .nav-links a{
       text-decoration:none;
       color:rgba(255,255,255,.82);
-      font-size:.82rem;
-      letter-spacing:.22em; /* más separado */
+      font-size:.80rem;
+      letter-spacing:.30em;
       text-transform:uppercase;
       transition:.25s;
       position:relative;
       padding:8px 6px;
+      white-space:nowrap;
     }
     .nav-links a:hover{color:var(--gold2)}
     .nav-links a::after{
@@ -94,8 +142,8 @@
     .btn{
       display:inline-flex;align-items:center;justify-content:center;
       padding:12px 18px;border-radius:999px;
-      text-decoration:none;font-size:.86rem;
-      letter-spacing:.22em; /* más separado */
+      text-decoration:none;font-size:.84rem;
+      letter-spacing:.30em;
       text-transform:uppercase;
       transition:.28s ease;
       user-select:none;white-space:nowrap;
@@ -117,14 +165,15 @@
     }
     .btn-solid:hover{transform:translateY(-1px); box-shadow:0 12px 28px rgba(200,169,106,.22)}
 
+    /* ===== Layout ===== */
     section{padding:110px 10%}
-    .wrap{max-width:1100px;margin:auto}
+    .wrap{max-width:1120px;margin:auto}
 
     .kicker{
       display:inline-flex;align-items:center;gap:10px;
       color:rgba(255,255,255,.80);
       font-size:.78rem;
-      letter-spacing:.40em; /* más separado */
+      letter-spacing:.46em;
       text-transform:uppercase;
       margin-bottom:16px;
     }
@@ -133,8 +182,8 @@
     h1,h2{font-family:'Playfair Display',serif}
     h1{
       font-weight:500;
-      font-size:clamp(2.5rem,4vw,3.8rem);
-      letter-spacing:.10em; /* más separado */
+      font-size:clamp(2.5rem,4vw,3.9rem);
+      letter-spacing:.12em;
       line-height:1.05;
       text-shadow:0 18px 50px rgba(0,0,0,.55);
       margin-bottom:16px;
@@ -142,17 +191,17 @@
     .sub{
       color:var(--muted);
       font-size:1rem;
-      letter-spacing:.26em; /* más separado */
+      letter-spacing:.30em;
       text-transform:uppercase;
-      line-height:1.6;
-      max-width:820px;
+      line-height:1.7;
+      max-width:920px;
       margin:0 auto;
     }
 
-    /* HERO slider (3 imágenes) */
+    /* ===== HERO slider (4 imágenes) ===== */
     .hero{
       height:100vh;
-      min-height:720px;
+      min-height:740px;
       position:relative;
       display:flex;
       align-items:center;
@@ -170,31 +219,32 @@
       filter:saturate(1.08) contrast(1.08);
       transform:scale(1.03);
       animation:heroZoom 18s ease-in-out infinite;
+      will-change:opacity, transform;
     }
     .hero .bg.active{opacity:1}
 
     .overlay{
       position:absolute; inset:0;
       background:
-        radial-gradient(800px 500px at 50% 30%, rgba(200,169,106,.10), transparent 60%),
-        linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.88));
+        radial-gradient(900px 540px at 50% 30%, rgba(200,169,106,.12), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.40), rgba(0,0,0,.90));
       z-index:1;
     }
 
     .hero-content{
       position:relative;
       z-index:2;
-      max-width:900px;
-      padding-top:70px;
+      max-width:980px;
+      padding-top:76px;
       opacity:0;
       transform:translateY(18px);
       animation:fadeUp 1.2s ease forwards .25s;
     }
 
     .logo{
-      width:min(260px, 62vw);
+      width:min(280px, 66vw);
       margin:0 auto 26px;
-      border-radius:14px;
+      border-radius:16px;
       background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.12);
       box-shadow:var(--shadow);
@@ -207,6 +257,37 @@
       justify-content:center;
       gap:12px;
       flex-wrap:wrap;
+    }
+
+    .hero-badges{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:18px auto 0;
+      max-width:980px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      background:rgba(10,14,20,.45);
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter:blur(10px);
+      color:rgba(255,255,255,.86);
+      font-size:.74rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      box-shadow:0 12px 28px rgba(0,0,0,.28);
+      white-space:nowrap;
+    }
+    .badge i{
+      width:8px;height:8px;border-radius:999px;
+      background:rgba(200,169,106,.75);
+      box-shadow:0 0 0 6px rgba(200,169,106,.10);
+      display:inline-block;
     }
 
     .scroll-hint{
@@ -223,22 +304,25 @@
       animation:pulse 1.8s ease-in-out infinite;
     }
 
-    /* TITULOS SECCIONES */
+    /* ===== SECCIÓN TITULO ===== */
     .section-title{text-align:center;margin-bottom:54px}
     .section-title h2{
       font-weight:500;
       font-size:clamp(1.9rem,2.5vw,2.6rem);
-      letter-spacing:.07em;
+      letter-spacing:.09em;
       margin-bottom:14px;
     }
     .section-title p{
       color:var(--muted2);
-      letter-spacing:.22em;
+      letter-spacing:.26em;
       text-transform:uppercase;
       font-size:.85rem;
+      line-height:1.6;
+      max-width:980px;
+      margin:0 auto;
     }
 
-    /* GALERÍA (3 fotos) */
+    /* ===== GALERÍA (4 fotos) ===== */
     .gallery{
       display:grid;
       grid-template-columns:repeat(12, 1fr);
@@ -267,14 +351,14 @@
     .card::after{
       content:"";
       position:absolute; inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.65));
+      background:linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.70));
       opacity:.85;
     }
     .tag{
       position:absolute;left:18px;bottom:16px;z-index:2;
       color:rgba(255,255,255,.92);
       font-size:.78rem;
-      letter-spacing:.24em;
+      letter-spacing:.26em;
       text-transform:uppercase;
       background:rgba(10,14,20,.45);
       border:1px solid rgba(255,255,255,.12);
@@ -284,35 +368,71 @@
 
     .c1{grid-column:span 7; min-height:420px}
     .c2{grid-column:span 5; min-height:420px}
-    .c3{grid-column:span 12; min-height:360px}
+    .c3{grid-column:span 6; min-height:360px}
+    .c4{grid-column:span 6; min-height:360px}
 
-    /* EXPERIENCIA */
+    /* ===== EXPERIENCIA / FEATURES ===== */
     .experience{text-align:center}
-    .experience .box{
-      margin:0 auto;max-width:900px;
-      padding:34px 26px;border-radius:var(--radius);
+    .experience-grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:18px;
+      margin-top:18px;
+    }
+    .panel{
+      border-radius:var(--radius);
       background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
       border:1px solid rgba(255,255,255,.10);
       box-shadow:0 18px 55px rgba(0,0,0,.45);
+      padding:28px 22px;
       transform:translateY(10px);
       opacity:0;
       transition:transform .7s ease, opacity .7s ease;
+      text-align:left;
     }
-    .experience .box.in{transform:translateY(0);opacity:1}
-    .experience p{
-      color:rgba(255,255,255,.78);
+    .panel.in{transform:translateY(0);opacity:1}
+    .panel h3{
+      font-family:'Playfair Display',serif;
+      font-weight:500;
+      letter-spacing:.10em;
+      text-transform:uppercase;
       font-size:1.02rem;
+      margin-bottom:10px;
+    }
+    .panel p{
+      color:rgba(255,255,255,.78);
       line-height:1.85;
       letter-spacing:.02em;
+      font-size:.98rem;
     }
+    .p1{grid-column:span 6}
+    .p2{grid-column:span 6}
+    .p3{grid-column:span 4}
+    .p4{grid-column:span 4}
+    .p5{grid-column:span 4}
 
-    /* CONTACTO */
+    /* ===== UBICACIÓN ===== */
+    .map{
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 18px 55px rgba(0,0,0,.45);
+      height:420px;
+      transform:translateY(10px);
+      opacity:0;
+      transition:transform .7s ease, opacity .7s ease;
+      background:rgba(255,255,255,.02);
+    }
+    .map.in{transform:translateY(0);opacity:1}
+    .map iframe{width:100%;height:100%;border:0}
+
+    /* ===== CONTACTO ===== */
     .contact{text-align:center}
-    .contact .panel{
-      max-width:950px;margin:0 auto;
-      padding:40px 26px;border-radius:var(--radius);
+    .contact .cta{
+      max-width:980px;margin:0 auto;
+      padding:42px 26px;border-radius:var(--radius);
       background:
-        radial-gradient(700px 260px at 50% -10%, rgba(200,169,106,.18), transparent 60%),
+        radial-gradient(700px 260px at 50% -10%, rgba(200,169,106,.20), transparent 60%),
         rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.10);
       box-shadow:0 18px 55px rgba(0,0,0,.45);
@@ -320,14 +440,15 @@
       opacity:0;
       transition:transform .7s ease, opacity .7s ease;
     }
-    .contact .panel.in{transform:translateY(0);opacity:1}
+    .contact .cta.in{transform:translateY(0);opacity:1}
     .contact p{
       color:var(--muted);
       margin:14px auto 26px;
-      max-width:820px;
-      letter-spacing:.12em;
+      max-width:860px;
+      letter-spacing:.14em;
       text-transform:uppercase;
       font-size:.88rem;
+      line-height:1.7;
     }
 
     footer{
@@ -337,15 +458,15 @@
       padding:34px 10%;
       font-size:13px;
       color:rgba(255,255,255,.55);
-      letter-spacing:.12em;
+      letter-spacing:.14em;
       text-transform:uppercase;
     }
 
-    /* WhatsApp flotante */
+    /* ===== WhatsApp flotante ===== */
     .whatsapp{
       position:fixed;
-      bottom:24px;
-      right:24px;
+      bottom:22px;
+      right:22px;
       z-index:3000;
       display:flex;
       align-items:center;
@@ -355,8 +476,8 @@
       background:linear-gradient(135deg, #34e27a, #1fb85b);
       color:#062010;
       text-decoration:none;
-      font-weight:700;
-      letter-spacing:.10em;
+      font-weight:800;
+      letter-spacing:.12em;
       box-shadow:0 16px 35px rgba(0,0,0,.45);
       border:1px solid rgba(255,255,255,.25);
       transition:.25s ease;
@@ -368,6 +489,7 @@
       box-shadow:0 0 0 6px rgba(255,255,255,.18);
     }
 
+    /* ===== Animaciones ===== */
     @keyframes fadeUp{
       from{transform:translateY(22px);opacity:0}
       to{transform:translateY(0);opacity:1}
@@ -385,13 +507,18 @@
       section{padding:95px 6%}
       .nav-links{display:none}
       .c1,.c2{grid-column:span 12; min-height:340px}
-      .c3{min-height:320px}
+      .c3,.c4{grid-column:span 12; min-height:320px}
+      .p1,.p2{grid-column:span 12}
+      .p3,.p4,.p5{grid-column:span 12}
+      .map{height:360px}
     }
     @media (max-width: 520px){
       .hero{min-height:680px}
-      .brand b{display:none}
       .btn{padding:12px 14px}
       .whatsapp{padding:13px 14px}
+      .brand-line-1{font-size:.66rem;letter-spacing:.30em}
+      .brand-line-2{font-size:.86rem;letter-spacing:.14em}
+      .brand-line-2::after{width:78%}
     }
   </style>
 </head>
@@ -401,14 +528,18 @@
   <!-- NAV -->
   <header class="nav" aria-label="Navegación">
     <div class="nav-inner">
-      <div class="brand">
+      <a class="brand" href="#inicio" aria-label="Inicio - Casa Bosque California">
         <img src="assets/images/logo.bosque.png" alt="Casa Bosque California">
-        <b>Casa Bosque</b>
-      </div>
+        <div class="brand-text">
+          <span class="brand-line-1">Casa Privada</span>
+          <span class="brand-line-2">Bosque California</span>
+        </div>
+      </a>
 
       <nav class="nav-links" aria-label="Secciones">
         <a href="#galeria">Galería</a>
         <a href="#experiencia">Experiencia</a>
+        <a href="#ubicacion">Ubicación</a>
         <a href="#reserva">Reserva</a>
       </nav>
 
@@ -419,20 +550,28 @@
     </div>
   </header>
 
-  <!-- HERO (slider con 3 imágenes) -->
+  <!-- HERO (slider con 4 imágenes) -->
   <section class="hero" id="inicio">
     <div class="bg active" style='background-image:url("assets/images/CALI1.jpeg")'></div>
     <div class="bg" style='background-image:url("assets/images/CALI2.jpeg")'></div>
     <div class="bg" style='background-image:url("assets/images/FOTO-CALI1.jpeg")'></div>
+    <div class="bg" style='background-image:url("assets/images/FOTO-CALI2.jpeg")'></div>
 
     <div class="overlay"></div>
 
     <div class="hero-content">
       <img src="assets/images/logo.bosque.png" alt="Casa Bosque California" class="logo">
 
-      <div class="kicker">California • Lujo • Naturaleza</div>
+      <div class="kicker">Chaclacayo • Privado • 24/7</div>
       <h1>Un Refugio Exclusivo</h1>
-      <div class="sub">Lujo, naturaleza y arquitectura en perfecta armonía</div>
+      <div class="sub">Piscina • Cochera • Salón premium para eventos privados y hospedaje</div>
+
+      <div class="hero-badges" aria-label="Características destacadas">
+        <span class="badge"><i></i> Capacidad 20–50 personas</span>
+        <span class="badge"><i></i> Piscina y vista premium</span>
+        <span class="badge"><i></i> Sonido + luces de fiesta</span>
+        <span class="badge"><i></i> 3 dormitorios (principal 4 plazas)</span>
+      </div>
 
       <div class="hero-actions">
         <a href="https://wa.me/51980474304" target="_blank" rel="noopener" class="btn btn-solid">Reservar ahora</a>
@@ -450,8 +589,8 @@
   <section id="galeria">
     <div class="wrap">
       <div class="section-title">
-        <h2>Descubre Casa Bosque</h2>
-        <p>Detalles premium • atmósfera boutique</p>
+        <h2>Galería</h2>
+        <p>Un espacio pensado para celebrar, descansar y desconectarte</p>
       </div>
 
       <div class="gallery">
@@ -469,6 +608,11 @@
           <img src="assets/images/FOTO-CALI1.jpeg" alt="Casa Bosque - Piscina nocturna">
           <figcaption class="tag">Piscina nocturna</figcaption>
         </figure>
+
+        <figure class="card c4 reveal">
+          <img src="assets/images/FOTO-CALI2.jpeg" alt="Casa Bosque - Ambiente premium">
+          <figcaption class="tag">Ambiente premium</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -477,34 +621,87 @@
   <section class="experience" id="experiencia">
     <div class="wrap">
       <div class="section-title">
-        <h2>Una Experiencia Única</h2>
-        <p>Privacidad • confort • diseño</p>
+        <h2>Experiencia Casa Bosque</h2>
+        <p>Privacidad • confort • ambiente boutique</p>
       </div>
 
-      <div class="box reveal">
-        <p>
-          Casa Bosque California es más que una propiedad.
-          Es un espacio diseñado para quienes valoran la privacidad,
-          la arquitectura de alto nivel y la conexión con la naturaleza.
-          Cada detalle ha sido pensado para ofrecer confort,
-          exclusividad y una atmósfera incomparable.
-        </p>
+      <div class="experience-grid">
+        <article class="panel p1 reveal">
+          <h3>Eventos privados</h3>
+          <p>
+            Un salón diseñado para reuniones y celebraciones, con vista privilegiada a la piscina.
+            Ideal para cumpleaños, aniversarios y encuentros íntimos con estilo.
+          </p>
+        </article>
+
+        <article class="panel p2 reveal">
+          <h3>Hospedaje exclusivo</h3>
+          <p>
+            Perfecto para escapadas privadas. Dormitorio principal con cama de 4 plazas y dos dormitorios adicionales,
+            pensados para descanso real y máxima comodidad.
+          </p>
+        </article>
+
+        <article class="panel p3 reveal">
+          <h3>Sonido</h3>
+          <p>Parlante con excelente potencia y calidad para todo el salón.</p>
+        </article>
+
+        <article class="panel p4 reveal">
+          <h3>Luces</h3>
+          <p>Luces de colores giratorias para un ambiente de fiesta premium.</p>
+        </article>
+
+        <article class="panel p5 reveal">
+          <h3>24/7</h3>
+          <p>Atención y coordinación disponible las 24 horas, todos los días.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- CONTACTO -->
+  <!-- UBICACIÓN -->
+  <section id="ubicacion">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Ubicación</h2>
+        <p>Puente Los Ángeles • Chaclacayo • Urb. El Bosque de California</p>
+      </div>
+
+      <div class="map reveal" aria-label="Mapa de ubicación">
+        <iframe
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Puente%20Los%20Angeles%20Chaclacayo%20El%20Bosque%20de%20California&output=embed">
+        </iframe>
+      </div>
+
+      <div style="text-align:center;margin-top:16px;">
+        <a class="btn btn-outline" href="https://maps.app.goo.gl/nnThyEHVVXxDJXd8A" target="_blank" rel="noopener">
+          Abrir en Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVA -->
   <section class="contact" id="reserva">
     <div class="wrap">
       <div class="section-title">
-        <h2>Reserva tu Estancia</h2>
-        <p>Atención directa por WhatsApp</p>
+        <h2>Reserva por WhatsApp</h2>
+        <p>Te respondemos para disponibilidad, tarifas y condiciones</p>
       </div>
 
-      <div class="panel reveal">
-        <p>Contáctanos y asegura tu experiencia exclusiva en Casa Bosque California.</p>
+      <div class="cta reveal">
+        <p>
+          Escríbenos la fecha, si es evento u hospedaje y la cantidad aproximada de personas.
+          Te confirmamos disponibilidad y detalles para tu experiencia en Casa Bosque California.
+        </p>
+
         <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
-          <a class="btn btn-solid" href="https://wa.me/51980474304" target="_blank" rel="noopener">Contactar ahora</a>
+          <a class="btn btn-solid" href="https://wa.me/51980474304" target="_blank" rel="noopener">
+            Contactar ahora
+          </a>
           <a class="btn btn-outline" href="#inicio">Volver arriba</a>
         </div>
       </div>
@@ -512,7 +709,7 @@
   </section>
 
   <footer>
-    © 2026 Casa Bosque California. Todos los derechos reservados.
+    © <span id="y"></span> Casa Bosque California. Todos los derechos reservados.
   </footer>
 
   <a class="whatsapp" href="https://wa.me/51980474304" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
@@ -521,7 +718,9 @@
   </a>
 
   <script>
-    // HERO slider (crossfade) con 3 imágenes
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // HERO slider (crossfade) con 4 imágenes
     (function(){
       const slides = document.querySelectorAll(".hero .bg");
       let i = 0;
