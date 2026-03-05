@@ -73,10 +73,11 @@
     }
     .brand-text{
       display:flex;
-      flex-direction:column;   /* ✅ SIEMPRE en 2 líneas */
+      flex-direction:column;
       line-height:1.05;
       gap:4px;
       min-width:0;
+      max-width:420px;
     }
     .brand-line-1{
       font-size:.72rem;
@@ -84,6 +85,8 @@
       text-transform:uppercase;
       color:rgba(255,255,255,.85);
       white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
     }
     .brand-line-2{
       font-family:'Playfair Display',serif;
@@ -93,6 +96,8 @@
       font-size:.92rem;
       color:rgba(255,255,255,.92);
       white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
       position:relative;
       padding-bottom:6px;
     }
@@ -512,13 +517,28 @@
       .p3,.p4,.p5{grid-column:span 12}
       .map{height:360px}
     }
+
+    /* ===== ULTRA PREMIUM MOBILE FIX ===== */
     @media (max-width: 520px){
       .hero{min-height:680px}
+
+      /* Header limpio (Airbnb style) */
       .btn{padding:12px 14px}
-      .whatsapp{padding:13px 14px}
-      .brand-line-1{font-size:.66rem;letter-spacing:.30em}
-      .brand-line-2{font-size:.86rem;letter-spacing:.14em}
-      .brand-line-2::after{width:78%}
+      .whatsapp{
+        padding:12px 14px;
+        gap:10px;
+        border-radius:999px;
+      }
+      .wa-dot{width:9px;height:9px}
+
+      /* Tipografía NO se monta */
+      .brand-text{max-width:200px}
+      .brand-line-1{font-size:.62rem;letter-spacing:.22em}
+      .brand-line-2{font-size:.82rem;letter-spacing:.08em}
+      .brand-line-2::after{width:64%}
+
+      /* En móvil deja solo el botón principal */
+      .btn-outline{display:none}
     }
   </style>
 </head>
